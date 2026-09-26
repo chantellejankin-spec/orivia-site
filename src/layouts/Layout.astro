@@ -60,7 +60,7 @@ const {
           for (const img of panels) {
             const rect = img.parentElement!.getBoundingClientRect();
             const progress = (rect.top) / vh;
-            const offset = progress * -40;
+            const offset = progress * -110;
             img.style.transform = `translateY(${offset}px)`;
           }
           ticking = false;

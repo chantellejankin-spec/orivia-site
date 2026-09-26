@@ -75,7 +75,7 @@ const audiences = [
   </section>
 
   <div class="stack">
-    {audiences.map((a) => (
+    {audiences.map((a, i) => (
       <a id={a.id} class={`stack-item tone-${a.tone}`} href={a.href}>
         <div class="wrap stack-inner">
           <span class="num">{a.num}</span>
@@ -83,6 +83,12 @@ const audiences = [
           <p>{a.summary}</p>
           <span class="more">Learn more &rarr;</span>
         </div>
+        {i < audiences.length - 1 && (
+          <span class="scroll-cue" aria-hidden="true">
+            <span class="scroll-cue-label">More Below</span>
+            <span class="scroll-cue-arrow">&darr;</span>
+          </span>
+        )}
       </a>
     ))}
   </div>
@@ -161,6 +167,43 @@ const audiences = [
 
   .tone-light {
     background: var(--paper);
+  }
+
+  .scroll-cue {
+    position: absolute;
+    bottom: clamp(1.25rem, 3vh, 2rem);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: 0.65;
+    pointer-events: none;
+  }
+
+  .scroll-cue-arrow {
+    font-size: 1.1rem;
+    animation: scroll-bounce 1.8s ease-in-out infinite;
+  }
+
+  .tone-dark .scroll-cue {
+    color: #f4f1e8;
+  }
+
+  @keyframes scroll-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-cue-arrow {
+      animation: none;
+    }
   }
 
   .cta {
