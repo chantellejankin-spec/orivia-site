@@ -1,0 +1,46 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="brand">Orivia Minerals</p>
+    <nav>
+      <a href="/#what-we-do">What We Do</a>
+      <a href="/#about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <p class="copy">&copy; {year} Orivia Minerals</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding: 2.5rem 0;
+    font-size: 0.8rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand {
+    margin: 0;
+    font-family: "Fraunces", serif;
+    color: var(--ink);
+  }
+
+  nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .copy {
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Ethical & Sustainable ASM Mining"
+  description="Our own artisanal and small-scale mining operations, run with responsible sourcing, environmental stewardship and community partnership."
+>
+  <section class="section service-page">
+    <div class="wrap">
+      <p class="eyebrow"><a href="/#what-we-do">&larr; What We Do</a></p>
+      <h1 class="reveal">Ethical &amp; Sustainable ASM Mining</h1>
+      <p class="lede reveal">
+        Our own operations are where our standards get tested first. We
+        champion sustainable and ethical mining practices that respect both
+        people and planet, guided by responsibility, transparency and a
+        long-term view.
+      </p>
+
+      <div class="body-grid">
+        <div class="reveal">
+          <h2>Environmental stewardship</h2>
+          <p>
+            We employ methods designed to minimise ecological impact and
+            regenerate mined landscapes: restoration, water protection and
+            biodiversity preservation built into every project. We measure
+            and report our footprint so it can actually be managed.
+          </p>
+        </div>
+        <div class="reveal">
+          <h2>Community and women&rsquo;s participation</h2>
+          <p>
+            We work directly with local communities on shared growth:
+            education, fair income and empowerment, with particular focus
+            on women&rsquo;s participation in mining regions. Local leaders
+            and families are involved at every step, building social
+            systems that outlast any single project.
+          </p>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a class="pill-btn" href="/contact">Talk to us about our operations</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .service-page .eyebrow {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .lede {
+    max-width: 720px;
+    font-size: 1.1rem;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+
+  .body-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap);
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .cta-row {
+    border-top: 1px solid var(--line);
+    padding-top: 2rem;
+  }
+
+  @media (max-width: 800px) {
+    .body-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Advisory for Artisanal & Small-Scale Miners"
+  description="Practical support for ASM operators working toward formalisation, responsible sourcing and stronger market access."
+>
+  <section class="section service-page">
+    <div class="wrap">
+      <p class="eyebrow"><a href="/#what-we-do">&larr; What We Do</a></p>
+      <h1 class="reveal">Advisory for Artisanal &amp; Small-Scale Miners</h1>
+      <p class="lede reveal">
+        Running our own ASM operations means we understand the practical
+        constraints other miners face. We advise operators on the steps
+        that make a real difference to how their site is run and who they
+        can sell to.
+      </p>
+
+      <div class="body-grid">
+        <div class="reveal">
+          <h2>What this covers</h2>
+          <p>
+            Formalisation support, cooperative and organisational structures,
+            and responsible sourcing readiness: the practical requirements
+            buyers and regulators increasingly expect. We help operators
+            understand what is being asked of them and build toward it at a
+            pace that fits their operation.
+          </p>
+          <p>
+            Health, safety and environmental practice improvements sized
+            realistically to an ASM operation&rsquo;s scale and resources.
+            Access to traceability tools that make responsible sourcing
+            claims genuinely verifiable.
+          </p>
+        </div>
+        <div class="reveal">
+          <h2>How we work</h2>
+          <p>
+            We work on-site and in the local language wherever possible.
+            Recommendations are practical and sequenced: what to fix first,
+            what can wait, and what it costs to get there.
+          </p>
+          <p>
+            Because we operate our own ASM site, our advice is grounded in
+            direct operating experience alongside policy knowledge.
+          </p>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a class="pill-btn" href="/contact">Talk to us about your operation</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .service-page .eyebrow {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .lede {
+    max-width: 720px;
+    font-size: 1.1rem;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+
+  .body-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap);
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .cta-row {
+    border-top: 1px solid var(--line);
+    padding-top: 2rem;
+  }
+
+  @media (max-width: 800px) {
+    .body-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

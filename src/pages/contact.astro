@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact" description="Get in touch with Orivia Minerals.">
+  <section class="section contact-page">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <h1>Get in Touch</h1>
+        <p class="lede">We&rsquo;d love to hear from you.</p>
+      </div>
+
+      <!--
+        This form posts to Formspree (https://formspree.io), a free service
+        that emails form submissions to you without needing a server.
+        Sign up for a free account, create a form, and replace
+        YOUR_FORM_ID below with the ID Formspree gives you.
+      -->
+      <form class="contact-form reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="field-row">
+          <label>
+            First name*
+            <input type="text" name="first_name" required />
+          </label>
+          <label>
+            Last name*
+            <input type="text" name="last_name" required />
+          </label>
+        </div>
+        <label>
+          Email*
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          Write a message*
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <button class="pill-btn" type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--gap);
+    align-items: start;
+  }
+
+  .lede {
+    font-size: 1.1rem;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+
+  input,
+  textarea {
+    font: inherit;
+    font-size: 0.95rem;
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.6em 0.8em;
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--ink);
+  }
+
+  button.pill-btn {
+    align-self: flex-start;
+    border: 1px solid var(--ink);
+    cursor: pointer;
+  }
+
+  @media (max-width: 800px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .field-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,258 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+
+const badges = ['Ethical', 'Sustainable', 'Traceable', 'Empowered'];
+
+const services = [
+  {
+    href: '/services/mining-operations',
+    title: 'Ethical & Sustainable ASM Mining',
+    summary:
+      'Our own artisanal and small-scale mining operations, run with responsible sourcing, environmental stewardship and genuine community partnership from the ground up.',
+  },
+  {
+    href: '/services/miner-advisory',
+    title: 'Advisory for Artisanal & Small-Scale Miners',
+    summary:
+      'Practical support for ASM operators working toward formalisation, responsible sourcing standards and stronger access to formal markets.',
+  },
+  {
+    href: '/services/investor-advisory',
+    title: 'Advisory for Investors & Buyers',
+    summary:
+      'ESG risk assessment, due diligence and traceability verification for capital and buyers entering or sourcing from ASM value chains.',
+  },
+];
+---
+
+<Layout title="Mining with Purpose">
+  <section class="hero section">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="badges reveal">
+          {badges.map((b) => <span class="badge">{b}</span>)}
+        </div>
+        <h1>Mining with Purpose</h1>
+        <p class="lede">
+          A pioneering advisory and operating partner for artisanal and
+          small-scale mining. We combine our own ethical ASM operations with
+          practical support for miners and investors across the sector.
+        </p>
+        <a class="pill-btn" href="#what-we-do">Discover More</a>
+      </div>
+      <div class="hero-image-wrap">
+        <img
+          id="hero-portrait"
+          class="hero-image"
+          src="/images/hero-portrait.jpg"
+          alt="Artisanal mining landscape"
+          width="1600"
+          height="2133"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section wide-image">
+    <img
+      src="/images/hero-landscape.jpg"
+      alt="Aerial view of a river running through mining and agricultural land"
+      width="1920"
+      height="1280"
+      loading="lazy"
+    />
+  </section>
+
+  <section id="about" class="section about">
+    <div class="wrap about-grid">
+      <h2 class="reveal">About Orivia</h2>
+      <div class="reveal">
+        <p>
+          Orivia Minerals is a pioneering initiative in the world of
+          artisanal and small-scale mining (ASM). Driven by a profound
+          commitment to sustainability, ethics and responsible sourcing, we
+          work to redefine what the sector can look like.
+        </p>
+        <p>
+          Our mandate has grown alongside our own operations. We run ethical
+          ASM mines ourselves, and we advise other artisanal and
+          small-scale miners on formalisation, responsible sourcing and
+          market access. We also advise investors and buyers on the risk,
+          due diligence and traceability questions that come with entering
+          or sourcing from ASM value chains.
+        </p>
+        <p>
+          Built on knowledge, collaboration and integrity, Orivia works to
+          turn mining into a regenerative force, for the people who depend
+          on it and the land it touches.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="what-we-do" class="section what-we-do">
+    <div class="wrap">
+      <h2 class="reveal">What We Do</h2>
+      <p class="intro reveal">
+        Our work spans the full relationship between the ASM sector and the
+        people who mine, invest in and buy from it.
+      </p>
+      <div class="service-grid">
+        {services.map((service) => <ServiceCard {...service} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="wrap cta-inner reveal">
+      <h2>Let&rsquo;s talk about your project</h2>
+      <p>
+        Whether you operate an ASM site, advise one, or are evaluating an
+        investment in the sector, we&rsquo;d like to hear from you.
+      </p>
+      <a class="pill-btn" href="/contact">Connect</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--gap);
+    align-items: center;
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .badge {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.3em 0.9em;
+    color: var(--ink);
+  }
+
+  .lede {
+    font-size: 1.1rem;
+    max-width: 44ch;
+  }
+
+  .hero-image-wrap {
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    will-change: transform;
+  }
+
+  .wide-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: var(--gap);
+  }
+
+  .intro {
+    max-width: 640px;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .cta {
+    background: rgba(5, 40, 18, 0.05);
+  }
+
+  .cta-inner {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .cta-inner p {
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid,
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .service-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  const hero = document.getElementById('hero-portrait');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (hero && !prefersReducedMotion) {
+    let scrollOffset = 0;
+    let tiltX = 0;
+    let tiltY = 0;
+    let hovering = false;
+    let ticking = false;
+
+    const applyTransform = () => {
+      hero.style.transform = hovering
+        ? `translateY(${scrollOffset}px) scale(1.03) translate(${tiltX}px, ${tiltY}px)`
+        : `translateY(${scrollOffset}px)`;
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const rect = hero.getBoundingClientRect();
+        scrollOffset = rect.top * 0.06;
+        applyTransform();
+        ticking = false;
+      });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    const wrap = hero.parentElement;
+    wrap?.addEventListener('mousemove', (e) => {
+      const bounds = wrap.getBoundingClientRect();
+      const x = (e.clientX - bounds.left) / bounds.width - 0.5;
+      const y = (e.clientY - bounds.top) / bounds.height - 0.5;
+      hovering = true;
+      tiltX = x * -8;
+      tiltY = y * -8;
+      applyTransform();
+    });
+
+    wrap?.addEventListener('mouseleave', () => {
+      hovering = false;
+      applyTransform();
+    });
+  }
+</script>
