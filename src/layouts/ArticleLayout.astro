@@ -4,15 +4,17 @@ import Layout from './Layout.astro';
 interface Props {
   title: string;
   description: string;
+  backLabel?: string;
+  backHref?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, backLabel = 'Insights', backHref = '/insights' } = Astro.props;
 ---
 
 <Layout title={title} description={description}>
   <article class="section article">
     <div class="wrap article-wrap">
-      <p class="eyebrow reveal"><a href="/insights">&larr; Insights</a></p>
+      <p class="eyebrow reveal"><a href={backHref}>&larr; {backLabel}</a></p>
       <h1 class="reveal">{title}</h1>
       <div class="prose reveal">
         <slot />
