@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ImagePanel from '../components/ImagePanel.astro';
+---
+
+<Layout
+  title="About"
+  description="Orivia Minerals: how an artisanal mining operation grew into an advisory practice for the ASM value chain across Sub-Saharan Africa."
+>
+  <section class="section intro-section">
+    <div class="wrap">
+      <p class="eyebrow reveal"><a href="/">&larr; Home</a></p>
+      <h1 class="reveal">About Orivia</h1>
+      <p class="lede reveal">
+        Orivia Minerals started as a pioneering initiative in artisanal and
+        small-scale mining (ASM). It has grown into something broader: an
+        operator and advisor working across the whole ASM value chain in
+        frontier markets, with a particular focus on Sub-Saharan Africa.
+      </p>
+    </div>
+  </section>
+
+  <ImagePanel
+    src="/images/community-portrait.jpg"
+    alt="Women from the mining community Orivia's operations are built around"
+  >
+    <h2 class="reveal">Where We Started</h2>
+    <p class="reveal">
+      Orivia began by operating its own artisanal and small-scale mining
+      site, driven by a commitment to sustainability, ethics and
+      responsible sourcing. Running that operation, day to day, taught us
+      what the sector&rsquo;s standards actually require on the ground,
+      beyond what appears on paper.
+    </p>
+  </ImagePanel>
+
+  <section class="section grown-section">
+    <div class="wrap grown-grid">
+      <h2 class="reveal">A Mandate That Grew With the Sector</h2>
+      <div class="reveal">
+        <p>
+          As our own operation matured, other parts of the sector started
+          asking for the same rigour we apply to ourselves. That advisory
+          side of Orivia has since grown to cover:
+        </p>
+        <ul class="grown-list">
+          <li>
+            <strong>Artisanal &amp; small-scale miners</strong> seeking a
+            practical path toward formalisation and responsible sourcing
+            readiness.
+          </li>
+          <li>
+            <strong>Large-scale mining companies</strong> operating
+            alongside or acquiring ASM sites, who need to understand and
+            manage that interface responsibly.
+          </li>
+          <li>
+            <strong>Investors</strong> assessing capital deployment into
+            ASM-adjacent projects and frontier-market mining assets.
+          </li>
+          <li>
+            <strong>Buyers and traders</strong> who need verifiable,
+            defensible answers about where a mineral actually came from.
+          </li>
+        </ul>
+        <p>
+          All of it is grounded in Sub-Saharan Africa and other frontier
+          markets, where the gap between informal practice and formal
+          market expectations is widest, and where the advisory work
+          matters most.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="wrap cta-inner reveal">
+      <h2>Work With Orivia</h2>
+      <p>
+        Tell us where you sit in the value chain, and we&rsquo;ll tell you
+        how we can help.
+      </p>
+      <a class="pill-btn" href="/contact">Connect</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .eyebrow {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .lede {
+    max-width: 720px;
+    font-size: 1.1rem;
+  }
+
+  .grown-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: var(--gap);
+  }
+
+  .grown-list {
+    list-style: none;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .grown-list li {
+    border-top: 1px solid var(--line);
+    padding-top: 1rem;
+  }
+
+  .grown-list strong {
+    color: var(--ink);
+    font-family: "Fraunces", serif;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .cta {
+    background: rgba(5, 40, 18, 0.05);
+  }
+
+  .cta-inner {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .cta-inner p {
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .grown-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

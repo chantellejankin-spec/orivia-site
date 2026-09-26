@@ -1,0 +1,32 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  eyebrow?: string;
+}
+
+const { src, alt, eyebrow } = Astro.props;
+---
+
+<section class="panel">
+  <div class="panel-media">
+    <img src={src} alt={alt} loading="lazy" />
+  </div>
+  <div class="panel-scrim"></div>
+  <div class="panel-content">
+    <div class="wrap">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <slot />
+    </div>
+  </div>
+</section>
+
+<style>
+  .eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 0.5rem;
+  }
+</style>

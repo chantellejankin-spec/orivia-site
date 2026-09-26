@@ -10,7 +10,7 @@ interface Props {
 
 const {
   title,
-  description = 'Orivia Minerals: ethical, sustainable and traceable artisanal mining, plus advisory for miners and investors across the ASM sector.',
+  description = 'Orivia Minerals: ethical ASM mining operations and advisory for artisanal miners, large-scale miners, investors, buyers and traders across frontier markets, with a focus on Sub-Saharan Africa.',
 } = Astro.props;
 ---
 
@@ -47,6 +47,37 @@ const {
         (el as HTMLElement).style.transitionDelay = `${Math.min(i % 4, 3) * 80}ms`;
         io.observe(el);
       });
+    </script>
+    <script>
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const panels = Array.from(document.querySelectorAll<HTMLElement>('.panel-media img'));
+
+      if (panels.length && !prefersReducedMotion) {
+        let ticking = false;
+
+        const update = () => {
+          const vh = window.innerHeight;
+          for (const img of panels) {
+            const rect = img.parentElement!.getBoundingClientRect();
+            const progress = (rect.top) / vh;
+            const offset = progress * -40;
+            img.style.transform = `translateY(${offset}px)`;
+          }
+          ticking = false;
+        };
+
+        window.addEventListener(
+          'scroll',
+          () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(update);
+          },
+          { passive: true }
+        );
+
+        update();
+      }
     </script>
   </body>
 </html>

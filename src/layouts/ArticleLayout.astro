@@ -1,0 +1,51 @@
+---
+import Layout from './Layout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <article class="section article">
+    <div class="wrap article-wrap">
+      <p class="eyebrow reveal"><a href="/insights">&larr; Insights</a></p>
+      <h1 class="reveal">{title}</h1>
+      <div class="prose reveal">
+        <slot />
+      </div>
+      <div class="cta-row">
+        <a class="pill-btn" href="/contact">Talk to us about your situation</a>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .article-wrap {
+    max-width: 760px;
+  }
+
+  .eyebrow {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose h2 {
+    font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+    margin-top: 2em;
+  }
+
+  .prose p {
+    font-size: 1.02rem;
+  }
+
+  .cta-row {
+    border-top: 1px solid var(--line);
+    padding-top: 2rem;
+    margin-top: 2.5rem;
+  }
+</style>

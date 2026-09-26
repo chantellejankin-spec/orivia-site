@@ -1,0 +1,105 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articles = [
+  {
+    href: '/insights/what-is-asm',
+    title: 'What Is Artisanal & Small-Scale Mining?',
+    summary:
+      'A plain introduction to ASM: who mines this way, why it matters to formal supply chains, and how it differs from large-scale mining.',
+  },
+  {
+    href: '/insights/why-frontier-markets',
+    title: 'Why Frontier Markets, and Why Sub-Saharan Africa',
+    summary:
+      'What makes frontier-market mining distinct, and why Sub-Saharan Africa sits at the centre of the ASM advisory conversation.',
+  },
+  {
+    href: '/insights/formalisation-in-practice',
+    title: 'Formalisation: The Practical Path from Informal to Compliant',
+    summary:
+      'What formalisation actually involves for an ASM operator, and why it unfolds as a sequence of steps.',
+  },
+  {
+    href: '/insights/traceability-explained',
+    title: 'Traceability in Practice: What Blockchain Actually Verifies',
+    summary:
+      'A grounded look at what blockchain-based traceability can and cannot prove about where a mineral came from.',
+  },
+  {
+    href: '/insights/esg-due-diligence-asm',
+    title: 'ESG Due Diligence for Investors Entering ASM Value Chains',
+    summary:
+      'What a meaningful ESG assessment covers when the asset in question touches artisanal and small-scale mining.',
+  },
+];
+---
+
+<Layout
+  title="Insights"
+  description="Background on artisanal mining, frontier markets and responsible sourcing, from Orivia Minerals."
+>
+  <section class="section intro-section">
+    <div class="wrap">
+      <h1 class="reveal">Insights</h1>
+      <p class="lede reveal">
+        Background on artisanal mining, frontier markets and the practical
+        realities of responsible sourcing, written from operating
+        experience.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap article-list">
+      {articles.map((a) => (
+        <a class="article-row reveal" href={a.href}>
+          <h2>{a.title}</h2>
+          <p>{a.summary}</p>
+          <span class="more">Read &rarr;</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .lede {
+    max-width: 640px;
+    font-size: 1.1rem;
+  }
+
+  .article-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-row {
+    padding: clamp(1.5rem, 3vw, 2.25rem) 0;
+    border-top: 1px solid var(--line);
+    transition: padding-left 0.25s ease;
+  }
+
+  .article-list a:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .article-row:hover {
+    padding-left: 0.75rem;
+  }
+
+  .article-row h2 {
+    font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .article-row p {
+    max-width: 60ch;
+    margin-bottom: 0.75rem;
+  }
+
+  .more {
+    font-size: 0.85rem;
+    color: var(--ink);
+  }
+</style>

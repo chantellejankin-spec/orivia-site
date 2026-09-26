@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const newsletterUrl = 'https://chantelles-newsletter-26af06.beehiiv.com/';
+---
+
+<Layout
+  title="The Rough Nugget"
+  description="The Rough Nugget: your weekly edge in gold and diamonds, prices, trends, and the industry news that matters."
+>
+  <section class="section hero-section">
+    <div class="wrap">
+      <p class="eyebrow reveal">Weekly Newsletter</p>
+      <h1 class="reveal">The Rough Nugget</h1>
+      <p class="lede reveal">
+        Your weekly edge in gold and diamonds: prices, trends, and the
+        industry news that matters.
+      </p>
+      <a class="pill-btn reveal" href={newsletterUrl} target="_blank" rel="noopener">
+        Subscribe on Beehiiv
+      </a>
+    </div>
+  </section>
+
+  <section class="section what-section">
+    <div class="wrap what-grid">
+      <div class="reveal">
+        <h2>What&rsquo;s In It</h2>
+        <p>
+          A short weekly read covering gold and diamond price movement,
+          notable deals and developments across frontier-market mining,
+          and context on the ASM sector that does not usually make
+          mainstream coverage.
+        </p>
+      </div>
+      <div class="reveal">
+        <h2>Who It&rsquo;s For</h2>
+        <p>
+          Investors, buyers and traders who want a fast, practical read
+          on the sector, alongside artisanal and large-scale miners
+          tracking the market they sell into.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="wrap cta-inner reveal">
+      <h2>Get The Rough Nugget in Your Inbox</h2>
+      <p>Free, weekly, straight from the field.</p>
+      <a class="pill-btn" href={newsletterUrl} target="_blank" rel="noopener">
+        Subscribe on Beehiiv
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+
+  .lede {
+    max-width: 560px;
+    font-size: 1.15rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .what-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap);
+  }
+
+  .cta {
+    background: rgba(5, 40, 18, 0.05);
+  }
+
+  .cta-inner {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .cta-inner p {
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 800px) {
+    .what-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

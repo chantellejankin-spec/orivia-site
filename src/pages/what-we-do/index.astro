@@ -1,0 +1,171 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const audiences = [
+  {
+    id: 'mining-operations',
+    num: '01',
+    title: 'Our Own ASM Mining Operations',
+    summary:
+      'Ethical, sustainable artisanal and small-scale mining, run by us, to the standard we advise everyone else to reach.',
+    href: '/what-we-do/mining-operations',
+    tone: 'dark',
+  },
+  {
+    id: 'asm-advisory',
+    num: '02',
+    title: 'Advisory for Artisanal & Small-Scale Miners',
+    summary:
+      'Practical support for ASM operators working toward formalisation, responsible sourcing and stronger market access.',
+    href: '/what-we-do/asm-advisory',
+    tone: 'light',
+  },
+  {
+    id: 'lsm-advisory',
+    num: '03',
+    title: 'Advisory for Large-Scale Mining Companies',
+    summary:
+      'Helping LSM operators manage the interface with artisanal mining around and within their concessions responsibly.',
+    href: '/what-we-do/lsm-advisory',
+    tone: 'dark',
+  },
+  {
+    id: 'investor-advisory',
+    num: '04',
+    title: 'Advisory for Investors',
+    summary:
+      'ESG risk assessment, due diligence and traceability verification for capital entering ASM-adjacent and frontier-market mining assets.',
+    href: '/what-we-do/investor-advisory',
+    tone: 'light',
+  },
+  {
+    id: 'buyer-trader-advisory',
+    num: '05',
+    title: 'Advisory for Buyers & Traders',
+    summary:
+      'Verifiable answers about origin and chain of custody for buyers and traders who need their sourcing to hold up to scrutiny.',
+    href: '/what-we-do/buyer-trader-advisory',
+    tone: 'dark',
+  },
+];
+---
+
+<Layout
+  title="What We Do"
+  description="Orivia Minerals works across the ASM value chain: our own mining operations, and advisory for artisanal miners, large-scale miners, investors, buyers and traders."
+>
+  <section class="section intro-section">
+    <div class="wrap">
+      <h1 class="reveal">What We Do</h1>
+      <p class="lede reveal">
+        Five vantage points on the same sector, each informed by the fact
+        that we operate a mine ourselves.
+      </p>
+    </div>
+  </section>
+
+  <div class="stack">
+    {audiences.map((a) => (
+      <a id={a.id} class={`stack-item tone-${a.tone}`} href={a.href}>
+        <div class="wrap stack-inner">
+          <span class="num">{a.num}</span>
+          <h2>{a.title}</h2>
+          <p>{a.summary}</p>
+          <span class="more">Learn more &rarr;</span>
+        </div>
+      </a>
+    ))}
+  </div>
+
+  <section class="section cta">
+    <div class="wrap cta-inner reveal">
+      <h2>Not Sure Which Fits?</h2>
+      <p>Tell us where you sit in the value chain, and we&rsquo;ll point you the right way.</p>
+      <a class="pill-btn" href="/contact">Connect</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .lede {
+    max-width: 640px;
+    font-size: 1.1rem;
+  }
+
+  .stack {
+    position: relative;
+  }
+
+  .stack-item {
+    display: block;
+    color: var(--ink);
+  }
+
+  .stack-inner {
+    max-width: 760px;
+  }
+
+  .num {
+    font-family: "Fraunces", serif;
+    font-size: 1rem;
+    opacity: 0.6;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .stack-item h2 {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    margin-bottom: 1rem;
+  }
+
+  .stack-item p {
+    font-size: 1.05rem;
+    max-width: 56ch;
+  }
+
+  .more {
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    display: inline-block;
+    margin-top: 0.5rem;
+    transition: transform 0.25s ease;
+  }
+
+  .stack-item:hover .more {
+    transform: translateX(4px);
+  }
+
+  .tone-dark {
+    background: var(--ink);
+  }
+
+  .tone-dark h2,
+  .tone-dark .more {
+    color: #f4f1e8;
+  }
+
+  .tone-dark p,
+  .tone-dark .num {
+    color: rgba(244, 241, 232, 0.82);
+  }
+
+  .tone-light {
+    background: var(--paper);
+  }
+
+  .cta {
+    position: relative;
+    z-index: 10;
+    background: rgba(5, 40, 18, 0.05);
+  }
+
+  .cta-inner {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .cta-inner p {
+    margin-bottom: 1.5rem;
+  }
+</style>
