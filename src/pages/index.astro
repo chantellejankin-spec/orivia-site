@@ -6,18 +6,22 @@ const principles = [
   {
     label: 'Ethical',
     text: 'Fair treatment of workers and communities is non-negotiable, in our own operations and in every mandate we advise on, from labour conditions to who a mineral is sourced through.',
+    href: '/principles/ethical',
   },
   {
     label: 'Sustainable',
     text: 'Environmental stewardship and long-term viability guide how a site is run, so extraction strengthens the land and livelihoods it touches.',
+    href: '/principles/sustainable',
   },
   {
     label: 'Traceable',
     text: 'Blockchain-based chain-of-custody tracks material from mine to market, giving investors, buyers and regulators verifiable answers about origin.',
+    href: '/principles/traceable',
   },
   {
     label: 'Empowered',
     text: 'Local ownership, women’s participation and community-led decision-making sit at the centre of how we build and advise mining operations.',
+    href: '/principles/empowered',
   },
 ];
 ---
@@ -55,6 +59,7 @@ const principles = [
           <div class="principle reveal">
             <span class="label">{p.label}</span>
             <p>{p.text}</p>
+            <a class="read-more" href={p.href}>Read more &rarr;</a>
           </div>
         ))}
       </div>
@@ -81,7 +86,7 @@ const principles = [
     <div class="wrap">
       <h2 class="reveal">Who We Work With</h2>
       <p class="intro reveal">
-        Five vantage points on the same sector, informed by the fact that
+        Six vantage points on the same sector, informed by the fact that
         we operate a mine ourselves.
       </p>
       <div class="audience-list">
@@ -92,7 +97,10 @@ const principles = [
           <span>Advisory for Artisanal &amp; Small-Scale Miners</span><span class="arrow">&rarr;</span>
         </a>
         <a class="audience-row reveal" href="/what-we-do#lsm-advisory">
-          <span>Advisory for Large-Scale Mining Companies</span><span class="arrow">&rarr;</span>
+          <span>Advisory for Large-Scale Mining &amp; Exploration Companies</span><span class="arrow">&rarr;</span>
+        </a>
+        <a class="audience-row reveal" href="/what-we-do#project-development">
+          <span>Project Development: Land Access &amp; Stakeholder Facilitation</span><span class="arrow">&rarr;</span>
         </a>
         <a class="audience-row reveal" href="/what-we-do#investor-advisory">
           <span>Advisory for Investors</span><span class="arrow">&rarr;</span>

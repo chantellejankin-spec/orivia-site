@@ -61,7 +61,7 @@ a {
 .pill-btn {
   display: inline-block;
   border: 1px solid var(--ink);
-  border-radius: 20px;
+  border-radius: 0;
   padding: 0.65em 1.7em;
   font-size: 0.8rem;
   letter-spacing: 0.04em;
@@ -143,6 +143,7 @@ a {
   width: 100%;
 }
 
+.panel-content h1,
 .panel-content h2,
 .panel-content h3 {
   color: #f4f1e8;
@@ -185,7 +186,19 @@ a {
 
 .principle p {
   font-size: 0.92rem;
-  margin-bottom: 0;
+  margin-bottom: 0.75rem;
+}
+
+.principle .read-more {
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.principle .read-more:hover {
+  transform: translateX(3px);
 }
 
 @media (max-width: 900px) {

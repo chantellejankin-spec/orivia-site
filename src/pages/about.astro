@@ -50,16 +50,23 @@ import ImagePanel from '../components/ImagePanel.astro';
             readiness.
           </li>
           <li>
-            <strong>Large-scale mining companies</strong> operating
-            alongside or acquiring ASM sites, who need to understand and
-            manage that interface responsibly.
+            <strong>Large-scale mining and exploration companies</strong>
+            operating alongside or acquiring ASM sites, or searching for
+            land in the first place, who need to understand and manage
+            that interface responsibly.
+          </li>
+          <li>
+            <strong>Project developers</strong> who need a full project
+            proposal built, from land access through bringing local and
+            international stakeholders to the same table.
           </li>
           <li>
             <strong>Investors</strong> assessing capital deployment into
             ASM-adjacent projects and frontier-market mining assets.
           </li>
           <li>
-            <strong>Buyers and traders</strong> who need verifiable,
+            <strong>Buyers and traders</strong>, including sourcing
+            mandates in the gold and diamond trade, who need verifiable,
             defensible answers about where a mineral actually came from.
           </li>
         </ul>
@@ -70,6 +77,56 @@ import ImagePanel from '../components/ImagePanel.astro';
           matters most.
         </p>
       </div>
+    </div>
+  </section>
+
+  <section class="section stats-section">
+    <div class="wrap">
+      <h2 class="reveal">The Sector by the Numbers</h2>
+      <p class="stats-intro reveal">
+        ASM operates alongside a very large formal mining industry.
+        Figures below are the most widely cited estimates; ranges reflect
+        genuine disagreement between sources.
+      </p>
+      <div class="stats-grid">
+        <div class="stat reveal">
+          <span class="stat-num">~45M</span>
+          <p>
+            people work directly in ASM across roughly 80 countries,
+            the largest mining workforce of any kind (World Bank &amp;
+            Pact, <em>2023 State of the ASM Sector</em>).
+          </p>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-num">15&ndash;20%</span>
+          <p>
+            of global gold production and a similar share of global
+            diamond production is estimated to come from ASM (World Gold
+            Council; World Diamond Council; GIA).
+          </p>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-num">3,600+ t</span>
+          <p>
+            tonnes of gold mined globally in 2024, a record high, the
+            large majority through formal large-scale operations (World
+            Gold Council).
+          </p>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-num">$900B+</span>
+          <p>
+            in annual revenue among the world&rsquo;s 100 largest mining
+            companies alone (PwC, <em>Mine 2026</em>), the scale of the
+            formal industry ASM sits alongside.
+          </p>
+        </div>
+      </div>
+      <p class="stats-note reveal">
+        Mining statistics shift year to year and vary by source. Treat
+        these as directional, and check current figures before quoting
+        them externally.
+      </p>
     </div>
   </section>
 
@@ -124,6 +181,47 @@ import ImagePanel from '../components/ImagePanel.astro';
     margin-bottom: 0.3rem;
   }
 
+  .stats-section {
+    background: rgba(5, 40, 18, 0.04);
+  }
+
+  .stats-intro {
+    max-width: 640px;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat {
+    border-top: 1px solid var(--line);
+    padding-top: 1.25rem;
+  }
+
+  .stat-num {
+    font-family: "Fraunces", serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--ink);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat p {
+    font-size: 0.88rem;
+    margin-bottom: 0;
+  }
+
+  .stats-note {
+    font-size: 0.78rem;
+    opacity: 0.75;
+    max-width: 640px;
+    margin-bottom: 0;
+  }
+
   .cta {
     background: rgba(5, 40, 18, 0.05);
   }
@@ -140,6 +238,16 @@ import ImagePanel from '../components/ImagePanel.astro';
 
   @media (max-width: 900px) {
     .grown-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .stats-grid {
       grid-template-columns: 1fr;
     }
   }
